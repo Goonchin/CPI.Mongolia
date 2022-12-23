@@ -20,11 +20,11 @@ if data is not None:
     max_date = appdata['ds'].max() #compute latest date in the data 
                 
 st.write("SELECT FORECAST PERIOD") #text displayedperiods_input = st.number_input('How many days forecast do you want?',
-    min_value = 1, max_value = 365)
+min_value = 1, max_value = 365)
 #The minimum number of days a user can select is one, while the maximum is  #365 (yearly forecast)
 
 if data is not None:
-        obj = Prophet() #Instantiate Prophet object
-        obj.fit(appdata)  #fit the data 
+    obj = Prophet() #Instantiate Prophet object
+    obj.fit(appdata)  #fit the data 
     
     
