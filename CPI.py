@@ -14,7 +14,7 @@ def load_data():
 df = load_data()
 
 st.title("Consumer Price Index in Mongolia")
-st.write("Analysing the inflation over the years and how they relate to the average prices of goods and services in Mongolia")
+st.write("Analysing the inflation over the years and how they relate to the average prices of goods and services in Mongolia, using Facebook Prophet. By using past recorded data to make predictions on the next 12 months price changes.")
 
 columns = df.columns[1:]
 selected_column = st.selectbox("Select a column", columns)
