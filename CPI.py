@@ -17,4 +17,4 @@ def load_data(column):
     return df
 
 df = load_data(selected_column)
-st.table(df)
+st.table(df.head())
