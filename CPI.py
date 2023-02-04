@@ -20,4 +20,4 @@ columns = ['Alcohol And Tobacco', 'Clothing,Footwear,and Cloth'] # add other col
 selected_column = st.selectbox("Select a column", columns)
 
 df = load_data(selected_column)
-return df
+    return df
