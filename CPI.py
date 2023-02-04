@@ -17,22 +17,22 @@ def load_data(column):
         df = pd.read_csv("Data/clothing, footwear, and cloth.csv", thousands=",")
     elif column == "Communications":
         df = pd.read_csv("Data/communications.csv", thousands=",")
-    #elif column == "Education Services":
-        #df = pd.read_csv("Data/education services.csv", thousands=",")
-    #elif column == "Food And Non-Alcoholic Beverages":
-        #df = pd.read_csv("Data/food and non-alcoholic beverages.csv", thousands=",")
-    #elif column == "Furnishings, Household Equipment, and tools":
-        #df = pd.read_csv("Data/furnishings, household equipment and tools.csv", thousands=",")    
-    #elif column == "Health":
-        #df = pd.read_csv("Data/health.csv", thousands=",")
-    #elif column == "Housing,Water,Electricity,Fuels":
-        #df = pd.read_csv("Data/housing, water, electricity, fuels.csv", thousands=",")
-    #elif column == "Overall Index":
-        #df = pd.read_csv("Data/overall Index.csv", thousands=",")
-    #elif column == "Recreation and Culture":
-        #df = pd.read_csv("Data/recreation and culture.csv", thousands=",") 
-    #elif column == "Transport":
-        #df = pd.read_csv("Data/transport.csv", thousands=",")    
+    elif column == "Education Services":
+        df = pd.read_csv("Data/education services.csv", thousands=",")
+    elif column == "Food And Non-Alcoholic Beverages":
+        df = pd.read_csv("Data/food and non-alcoholic beverages.csv", thousands=",")
+    elif column == "Furnishings, Household Equipment, and tools":
+        df = pd.read_csv("Data/furnishings, household equipment and tools.csv", thousands=",")    
+    elif column == "Health":
+        df = pd.read_csv("Data/health.csv", thousands=",")
+    elif column == "Housing,Water,Electricity,Fuels":
+        df = pd.read_csv("Data/housing, water, electricity, fuels.csv", thousands=",")
+    elif column == "Overall Index":
+        df = pd.read_csv("Data/overall Index.csv", thousands=",")
+    elif column == "Recreation and Culture":
+        df = pd.read_csv("Data/recreation and culture.csv", thousands=",") 
+    elif column == "Transport":
+        df = pd.read_csv("Data/transport.csv", thousands=",")    
     # add more elif blocks for other columns
     return df
 
