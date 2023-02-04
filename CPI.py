@@ -38,6 +38,8 @@ def load_data(column):
 
 df = load_data(selected_column)
 
+df.columns
+
 df.index = df['Date']
 df = df[['Prices']]
 df.rename(columns={'Prices': 'y'}, inplace=True)
