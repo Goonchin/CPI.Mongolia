@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
-from prophet import Prophet
+import numpy as np
+import matplotlib.pyplot as plt
+from fbprophet import Prophet
 
 st.title("Consumer Price Index in Mongolia")
 st.write("Analysing the inflation over the years and how they relate to the average prices of goods and services in Mongolia, using Facebook Prophet. By using past recorded data to make predictions for the price changes for the next 12 months.")
@@ -18,16 +20,17 @@ def load_data(column):
     return df
 
 df = load_data(selected_column)
-st.table(df.head())
 
-df = load_data(selected_column)
-
-df.rename(columns={"Year": "ds", selected_column: "y"}, inplace=True)
+df.index = df['Year']
+df = df[['Value']]
+df.rename(columns={'Value': 'y'}, inplace=True)
+df['ds'] = df.index
 
 model = Prophet()
 model.fit(df)
 
+# Make predictions
 future = model.make_future_dataframe(periods=12, freq='M')
 forecast = model.predict(future)
 
-st.line_chart(forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']])
+st.write(forecast)
