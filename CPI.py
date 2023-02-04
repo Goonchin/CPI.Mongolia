@@ -18,3 +18,5 @@ def load_data(column):
         df = pd.read_csv("Data/clothing, footwear, and cloth.csv", thousands=",")
     # add more elif blocks for other columns
     return df
+
+st.table(df)
