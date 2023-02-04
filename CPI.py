@@ -21,12 +21,14 @@ selected_column = st.selectbox("Select a column", columns)
 
 df = load_data(selected_column)
 
-st.line_chart(df[['ds', 'y']])
+# Rename the columns
+df.rename(columns={'ds': 'Date', 'y': 'Prices'}, inplace=True)
+
+st.line_chart(df[['Date', 'Prices']])
 
 st.write("Analyzing the trend using Facebook Prophet")
 model = Prophet(yearly_seasonality=True)
-df_model = df[["ds", 'y']]
-df_model = df_model.rename(columns={"ds": "Date", 'y': 'Prices'})
+df_model = df[["Date", 'Prices']]
 model.fit(df_model)
 future = model.make_future_dataframe(periods=12, freq='M')
 forecast = model.predict(future)
@@ -35,4 +37,3 @@ st.line_chart(forecast[["ds", "yhat"]])
 
 st.write("Forecasted values for the next year")
 forecast[["ds", "yhat"]].tail(12)
-
