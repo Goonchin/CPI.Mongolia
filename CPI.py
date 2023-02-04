@@ -50,19 +50,19 @@ fig =model.plot(forecast)
 st.pyplot(fig)
 
 if selected_column == "Alcohol And Tobacco":
-    description = "The price of alcohol and tobacco products in Mongolia over the next 36 months, will continute to increase due to inflation and overall increasing costs for materials and labor."
+    description = "The price of alcohol and tobacco products in Mongolia over the next 36 months, will continue to increase due to inflation and overall increasing costs for materials and labor."
 elif selected_column == "Clothing,Footwear,and Cloth":
-    description = "The price of clothing, footwear, and cloth products in Mongolia over the next 36 months will continute to increase due to inflation and overall increasing costs for materials and labor."
+    description = "The price of clothing, footwear, and cloth products in Mongolia over the next 36 months will continue to increase due to inflation and overall increasing costs for materials and labor."
 elif selected_column == "Communications":
-    description = "The price of communication in Mongolia over the next 36 months will continute to stay stagnant due to relative costs over the years, showing not much change overall."
+    description = "The price of communication in Mongolia over the next 36 months will continue to stay stagnant due to relative costs over the years, showing not much change overall."
 elif selected_column == "Education Services":
-    description = "The price of education services in Mongolia over the next 36 months will continute to increase due to inflation and overall increasing costs for labor and supplies."
+    description = "The price of education services in Mongolia over the next 36 months will continue to increase due to inflation and overall increasing costs for labor and supplies."
 elif selected_column == "Food And Non-Alcoholic Beverages":
-    description = "The price of food and non-alcoholic beverage products in Mongolia over the next 36 months will continute to increase due to inflation and overall increasing costs for materials and labor."
+    description = "The price of food and non-alcoholic beverage products in Mongolia over the next 36 months will continue to increase due to inflation and overall increasing costs for materials and labor."
 elif selected_column == "Health":
-    description = "The price of health products and services in Mongolia over the next 36 months will continute to increase due to inflation and overall increasing costs for materials and labor."
+    description = "The price of health products and services in Mongolia over the next 36 months will continue to increase due to inflation and overall increasing costs for materials and labor."
 elif selected_column == "Housing,Water,Electricity,Fuels":
-    description = "The price of housing,water,electricity and fuels in Mongolia over the next 36 months will continute to increase due to inflation, scarcity and maintenance costs."
+    description = "The price of housing,water,electricity and fuels in Mongolia over the next 36 months will continue to increase due to inflation, scarcity and maintenance costs."
 elif selected_column == "Overall Index":
     description = "The prices of the overall index costs will continue to increase, due to an increase of all the difference consumer goods and services."
 elif selected_column == "Recreation and Culture":
