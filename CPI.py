@@ -21,7 +21,7 @@ def load_data(column):
 
 df = load_data(selected_column)
 
-df.index = df['Date']
+df.index = df['ds']
 df = df[['y']]
 df.rename(columns={'y': 'y'}, inplace=True)
 df['ds'] = df.index
