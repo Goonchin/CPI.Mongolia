@@ -43,8 +43,7 @@ model.fit(df)
 future = model.make_future_dataframe(periods=36, freq='M')
 forecast = model.predict(future)
 
-st.write("Analysing the inflation over the years and how they relate to the average prices of goods and services in Mongolia, using Facebook Prophet. By using past recorded data to make predictions for the price changes for the next 36 months.")
-
+st.write("Analysing the inflation over the years and how they relate to the average prices of goods and services in Mongolia, using Facebook Prophet. All the data was obtained from 1212.mn under the Consumer Price Index section for all products and services in Mongolia for all the years/months that were recorded."
 # Plot the predictions
 fig =model.plot(forecast)
 st.pyplot(fig)
