@@ -45,6 +45,7 @@ forecast = model.predict(future)
 
 st.write("Analysing the inflation over the years and how they relate to the average prices of goods and services in Mongolia, using Facebook Prophet. All the data was obtained from 1212.mn under the Consumer Price Index section for all products and services in Mongolia for all the years/months that were recorded."
 # Plot the predictions
+
 fig =model.plot(forecast)
 st.pyplot(fig)
 
