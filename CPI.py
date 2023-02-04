@@ -15,7 +15,7 @@ def load_data(column):
         df = pd.read_csv("Data/alcohol and tobacco.csv", thousands=",")
     elif column == "Clothing,Footwear,and Cloth":
         df = pd.read_csv("Data/clothing, footwear, and cloth.csv", thousands=",")
-    else column == "Communications":
+    elif column == "Communications":
         df = pd.read_csv("Data/communications.csv", thousands=",")
     #elif column == "Education Services":
         #df = pd.read_csv("Data/education services.csv", thousands=",")
@@ -38,12 +38,12 @@ def load_data(column):
 
 df = load_data(selected_column)
 
-df.columns
+#df.columns
 
-df.index = df['Date']
-df = df[['Prices']]
-df.rename(columns={'Prices': 'y'}, inplace=True)
-df['ds'] = df.index
+#df.index = df['Date']
+#df = df[['Prices']]
+#df.rename(columns={'Prices': 'y'}, inplace=True)
+#df['ds'] = df.index
 
 model = Prophet()
 model.fit(df)
