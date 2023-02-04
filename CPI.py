@@ -20,8 +20,8 @@ def load_data(column):
     elif column == "Education Services":
         df = pd.read_csv("Data/education services.csv", thousands=",")
     elif column == "Food And Non-Alcoholic Beverages":
-        df = pd.read_csv("Data/food and non-alchoholic beverages.csv", thousands=",")
-    elif column == "Furnishings, Household Equipment and Tools":
+        df = pd.read_csv("Data/food and non-alcoholic beverages.csv", thousands=",")
+    elif column == "Furnishings, Household Equipment, and tools":
         df = pd.read_csv("Data/furnishings, household equipment and tools.csv", thousands=",")    
     elif column == "Health":
         df = pd.read_csv("Data/health.csv", thousands=",")
@@ -53,5 +53,5 @@ forecast = model.predict(future)
 st.write("Analysing the inflation over the years and how they relate to the average prices of goods and services in Mongolia, using Facebook Prophet. By using past recorded data to make predictions for the price changes for the next 12 months.")
 
 # Plot the predictions
-fig = model.plot(forecast)
+fig =model.plot(forecast)
 st.pyplot(fig)
