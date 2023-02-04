@@ -29,7 +29,7 @@ df['Date'] = df.index
 model = Prophet()
 model.fit(df)
 
-Make predictions
+#Make predictions
 future = model.make_future_dataframe(periods=12, freq='M')
 forecast = model.predict(future)
 
