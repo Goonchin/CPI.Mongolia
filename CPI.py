@@ -18,3 +18,15 @@ def load_data(column):
 
 df = load_data(selected_column)
 st.table(df.head())
+
+df = load_data(selected_column)
+
+df.rename(columns={"Year": "ds", selected_column: "y"}, inplace=True)
+
+model = Prophet()
+model.fit(df)
+
+future = model.make_future_dataframe(periods=12, freq='M')
+forecast = model.predict(future)
+
+st.line_chart(forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']])
