@@ -23,7 +23,9 @@ st.line_chart(df[["Date", selected_column]])
 
 st.write("Analyzing the trend using Facebook Prophet")
 model = Prophet(yearly_seasonality=True)
-model.fit(df[["Date", selected_column]])
+df_model = df[["Date", selected_column]]
+df_model = df_model.rename(columns={"Date": "ds", selected_column: "y"})
+model.fit(df_model)
 future = model.make_future_dataframe(periods=12, freq='M')
 forecast = model.predict(future)
 
