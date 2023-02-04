@@ -6,10 +6,10 @@ from prophet import Prophet
 
 @st.cache
 def load_data(column):
-    if column == "Food":
-        df = pd.read_csv("Data/Food.csv", thousands=",")
-    elif column == "Housing":
-        df = pd.read_csv("Data/Housing.csv", thousands=",")
+    if column == "Alcohol And Tobacco":
+        df = pd.read_csv("Data/alcohol and tobacco.csv", thousands=",")
+    elif column == "Clothing,Footwear,and Cloth":
+        df = pd.read_csv("Data/clothing, footwear, and cloth.csv", thousands=",")
     # add more elif blocks for other columns
     else:
         df = pd.read_csv("Data/CPI.csv", thousands=",")
