@@ -17,13 +17,13 @@ def load_data(column):
     df = df.dropna()
     return df
 
-df = load_data(selected_column)
-
 st.title("Consumer Price Index in Mongolia")
 st.write("Analysing the inflation over the years and how they relate to the average prices of goods and services in Mongolia, using Facebook Prophet. By using past recorded data to make predictions for the price changes for the next 12 months.")
 
-columns = df.columns[1:]
+columns = ['Alcohol And Tobacco', 'Clothing,Footwear,and Cloth'] # add other columns here
 selected_column = st.selectbox("Select a column", columns)
+
+df = load_data(selected_column)
 
 st.line_chart(df[["Date", selected_column]])
 
