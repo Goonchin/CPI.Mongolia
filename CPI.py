@@ -5,13 +5,19 @@ import matplotlib.pyplot as plt
 from prophet import Prophet
 
 @st.cache
-def load_data():
-    df = pd.read_csv("Data/CPI.csv", thousands=",")
+def load_data(column):
+    if column == "Food":
+        df = pd.read_csv("Data/Food.csv", thousands=",")
+    elif column == "Housing":
+        df = pd.read_csv("Data/Housing.csv", thousands=",")
+    # add more elif blocks for other columns
+    else:
+        df = pd.read_csv("Data/CPI.csv", thousands=",")
     df["Date"] = pd.to_datetime(df["Date"])
     df = df.dropna()
     return df
 
-df = load_data()
+df = load_data(selected_column)
 
 st.title("Consumer Price Index in Mongolia")
 st.write("Analysing the inflation over the years and how they relate to the average prices of goods and services in Mongolia, using Facebook Prophet. By using past recorded data to make predictions for the price changes for the next 12 months.")
