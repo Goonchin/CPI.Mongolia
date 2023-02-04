@@ -20,7 +20,7 @@ def load_data(column):
     elif column == "Education Services":
         df = pd.read_csv("Data/education services.csv", thousands=",")
     elif column == "Food And Non-Alcoholic Beverages":
-        df = pd.read_csv("Data/food and non-alcoholic beverages.csv", thousands=",")
+        df = pd.read_csv("Data/food and non-alchoholic beverages.csv", thousands=",")
     elif column == "Furnishings, Household Equipment, and tools":
         df = pd.read_csv("Data/furnishings, household equipment and tools.csv", thousands=",")    
     elif column == "Health":
