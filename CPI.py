@@ -41,7 +41,7 @@ df = load_data(selected_column)
 df.index = df['Date']
 df = df[['Prices']]
 df.rename(columns={'Prices': 'y'}, inplace=True)
-df['Date'] = df.index
+df['ds'] = df.index
 
 model = Prophet()
 model.fit(df)
