@@ -40,7 +40,7 @@ model = Prophet()
 model.fit(df)
 
 #Make predictions
-future = model.make_future_dataframe(periods=12, freq='M')
+future = model.make_future_dataframe(periods=36, freq='M')
 forecast = model.predict(future)
 
 st.write("Analysing the inflation over the years and how they relate to the average prices of goods and services in Mongolia, using Facebook Prophet. By using past recorded data to make predictions for the price changes for the next 12 months.")
