@@ -22,16 +22,16 @@ def load_data(column):
 df = load_data(selected_column)
 
 df.columns
-#df.index = df['ds']
-#df = df[['y']]
-#df.rename(columns={'y': 'y'}, inplace=True)
-#df['ds'] = df.index
+df.index = df['Date']
+df = df[['Prices']]
+df.rename(columns={'Prices': 'y'}, inplace=True)
+df['ds'] = df.index
 
-#model = Prophet()
-#model.fit(df)
+model = Prophet()
+model.fit(df)
 
-# Make predictions
-#future = model.make_future_dataframe(periods=12, freq='M')
-#forecast = model.predict(future)
+Make predictions
+future = model.make_future_dataframe(periods=12, freq='M')
+forecast = model.predict(future)
 
-#st.write(forecast)
+st.write(forecast)
