@@ -1,8 +1,5 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-from prophet import Prophet
 
 st.title("Consumer Price Index in Mongolia")
 st.write("Analysing the inflation over the years and how they relate to the average prices of goods and services in Mongolia, using Facebook Prophet. By using past recorded data to make predictions for the price changes for the next 12 months.")
@@ -19,4 +16,5 @@ def load_data(column):
     # add more elif blocks for other columns
     return df
 
+df = load_data(selected_column)
 st.table(df)
