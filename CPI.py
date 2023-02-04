@@ -6,7 +6,7 @@ from prophet import Prophet
 
 @st.cache
 def load_data():
-    df = pd.read_csv("/content/drive/MyDrive/Captone CPI/CPI.csv", thousands=",")
+    df = pd.read_csv("Data/CPI.csv", thousands=",")
     df["Date"] = pd.to_datetime(df["Date"])
     df = df.dropna()
     return df
