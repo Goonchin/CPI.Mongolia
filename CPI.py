@@ -22,8 +22,8 @@ def load_data(column):
 df = load_data(selected_column)
 
 df.index = df['Date']
-df = df[['Price']]
-df.rename(columns={'Price': 'y'}, inplace=True)
+df = df[['y']]
+df.rename(columns={'y': 'y'}, inplace=True)
 df['ds'] = df.index
 
 model = Prophet()
