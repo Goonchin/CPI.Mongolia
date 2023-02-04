@@ -11,10 +11,6 @@ def load_data(column):
     elif column == "Clothing,Footwear,and Cloth":
         df = pd.read_csv("Data/clothing, footwear, and cloth.csv", thousands=",")
     # add more elif blocks for other columns
-    else:
-        df = pd.read_csv("Data/CPI.csv", thousands=",")
-    df["Date"] = pd.to_datetime(df["Date"])
-    df = df.dropna()
     return df
 
 st.title("Consumer Price Index in Mongolia")
