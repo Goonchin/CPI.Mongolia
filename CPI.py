@@ -7,7 +7,7 @@ from prophet import Prophet
 @st.cache
 def load_data():
     df = pd.read_csv("Data/alcohol and tobacco.csv", thousands=",")
-    df["Date"] = pd.to_datetime(df["Date"])
+    df["ds"] = pd.to_datetime(df["ds"])
     df = df.dropna()
     return df
 
