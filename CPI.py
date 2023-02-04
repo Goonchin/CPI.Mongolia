@@ -13,7 +13,7 @@ def load_data(column):
     # add more elif blocks for other columns
     else:
         df = pd.read_csv("Data/CPI.csv", thousands=",")
-    df["Date"] = pd.to_datetime(df["Date"])
+    df["Ds"] = pd.to_datetime(df["Ds"])
     df = df.dropna()
     return df
 
