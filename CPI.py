@@ -25,11 +25,11 @@ selected_column = st.selectbox("Select a column", columns)
 
 df = load_data(selected_column)
 
-st.line_chart(df[["Date", selected_column]])
+st.line_chart(df[["ds", selected_column]])
 
 st.write("Analyzing the trend using Facebook Prophet")
 model = Prophet(yearly_seasonality=True)
-df_model = df[["Date", selected_column]]
+df_model = df[["ds", selected_column]]
 df_model = df_model.rename(columns={"Date": "ds", selected_column: "y"})
 model.fit(df_model)
 future = model.make_future_dataframe(periods=12, freq='M')
