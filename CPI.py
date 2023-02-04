@@ -15,8 +15,8 @@ def load_data(column):
         df = pd.read_csv("Data/alcohol and tobacco.csv", thousands=",")
     elif column == "Clothing,Footwear,and Cloth":
         df = pd.read_csv("Data/clothing, footwear, and cloth.csv", thousands=",")
-    #elif column == "Communications":
-        #df = pd.read_csv("Data/communications.csv", thousands=",")
+    elif column == "Communications":
+        df = pd.read_csv("Data/communications.csv", thousands=",")
     #elif column == "Education Services":
         #df = pd.read_csv("Data/education services.csv", thousands=",")
     #elif column == "Food And Non-Alcoholic Beverages":
