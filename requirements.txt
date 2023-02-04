@@ -1,4 +1,2 @@
 streamlit==1.15.0
-gdown==4.4.0
 matplotlib==3.6.3
-fbprophet==0.7.1
