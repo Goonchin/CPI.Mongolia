@@ -43,7 +43,7 @@ model.fit(df)
 future = model.make_future_dataframe(periods=36, freq='M')
 forecast = model.predict(future)
 
-st.write("Analysing the inflation over the years and how they relate to the average prices of goods and services in Mongolia, using Facebook Prophet. By using past recorded data to make predictions for the price changes for the next 12 months.")
+st.write("Analysing the inflation over the years and how they relate to the average prices of goods and services in Mongolia, using Facebook Prophet. By using past recorded data to make predictions for the price changes for the next 36 months.")
 
 # Plot the predictions
 fig =model.plot(forecast)
@@ -72,3 +72,5 @@ elif selected_column == "Transport":
 # Add more elif blocks for other columns with their respective descriptions
 else:
     description = "The price of the selected product category in Mongolia over the next 36 months, will overall increase over the years."
+
+st.write(description)
