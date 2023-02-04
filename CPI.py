@@ -5,7 +5,7 @@ from prophet import Prophet
 
 st.title("Consumer Price Index in Mongolia")
 
-columns = ['Alcohol And Tobacco', 'Clothing,Footwear,and Cloth','Communications','Education Services','Food And Non-Alcoholic Beverages','Furnishings, Household Equipment, and tools',
+columns = ['Alcohol And Tobacco', 'Clothing,Footwear,and Cloth','Communications','Education Services','Food And Non-Alcoholic Beverages',
            'Health','Housing,Water,Electricity,Fuels','Overall Index','Recreation and Culture','Transport'] # add other columns here
 selected_column = st.selectbox("Select a column", columns)
 
@@ -20,9 +20,7 @@ def load_data(column):
     elif column == "Education Services":
         df = pd.read_csv("Data/education services.csv", thousands=",")
     elif column == "Food And Non-Alcoholic Beverages":
-        df = pd.read_csv("Data/food and non-alchoholic beverages.csv", thousands=",")
-    #elif column == "Furnishings, Household Equipment, and tools":
-        #df = pd.read_csv("Data/furnishings, household equipment and tools.csv", thousands=",")    
+        df = pd.read_csv("Data/food and non-alchoholic beverages.csv", thousands=",")    
     elif column == "Health":
         df = pd.read_csv("Data/health.csv", thousands=",")
     elif column == "Housing,Water,Electricity,Fuels":
@@ -37,13 +35,6 @@ def load_data(column):
     return df
 
 df = load_data(selected_column)
-
-#df.columns
-
-#df.index = df['Date']
-#df = df[['Prices']]
-#df.rename(columns={'Prices': 'y'}, inplace=True)
-#df['ds'] = df.index
 
 model = Prophet()
 model.fit(df)
