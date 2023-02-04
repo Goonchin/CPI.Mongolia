@@ -7,7 +7,7 @@ from prophet import Prophet
 @st.cache
 def load_data():
     df = pd.read_csv("Data/alcohol and tobacco.csv", thousands=",")
-    df["ds"] = pd.to_datetime(df["ds"])
+    df["Date"] = pd.to_datetime(df["Date"])
     df = df.dropna()
     return df
 
@@ -19,7 +19,7 @@ st.write("Analysing the inflation over the years and how they relate to the aver
 columns = df.columns[1:]
 selected_column = st.selectbox("Select a column", columns)
 
-st.line_chart(df[["Date", selected_column]])
+st.line_chart(df[["ds", selected_column]])
 
 st.write("Analyzing the trend using Facebook Prophet")
 model = Prophet(yearly_seasonality=True)
