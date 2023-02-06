@@ -24,20 +24,10 @@ def load_data(column):
         "Transport": "transport.csv",
         "Overall Index": "overall Index.csv",}
     
-    if column == "All":
+   if column == "All":
         dfs = [pd.read_csv(f"Data/{file}", thousands=",") for file in data_files.values()]
         df = pd.concat(dfs)
-        df["category"] = [
-            "Alcohol and Tobacco" if "alcohol" in file else
-            "Clothing,Footwear,and Cloth" if "clothing" in file else
-            "Communications" if "communications" in file else
-            "Education Services" if "education" in file else
-            "Food and Non-Alcoholic Beverages" if "food" in file else
-            "Health" if "health" in file else
-            "Housing,Water,Electricity,Fuels" if "housing" in file else
-            "Recreation and Culture" if "recreation" in file else
-            "Transport" if "transport" in file else
-            "Overall Index" for file in data_files.values()]
+        df["category"] = [c for c in data_files.keys() for file in data_files.values()]
         return df
     else:
         df = pd.read_csv(f"Data/{data_files[column]}", thousands=",")
