@@ -3,7 +3,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from prophet import Prophet
 
-st.title("Consumer Price Index in Mongolia")
+st.title("How Does Inflation Affect The Mongolian Economy?")
+st.subheader("Take a look at the current records of prices of different products and services in Mongolia.")
 
 columns = ['Alcohol And Tobacco', 'Clothing,Footwear,and Cloth','Communications','Education Services','Food And Non-Alcoholic Beverages',
            'Health','Housing,Water,Electricity,Fuels','Overall Index','Recreation and Culture','Transport'] # add other columns here
@@ -46,8 +47,10 @@ forecast = model.predict(future)
 st.write("Analysing the inflation over the years and how they relate to the average prices of goods and services in Mongolia, using Facebook Prophet. All the data was obtained from 1212.mn from the Consumer Price Index section.")
 
 # Plot the predictions
-fig =model.plot(forecast)
-st.pyplot(fig)
+plt.figure(figsize=(15,5))
+model.plot(forecast, xlabel="Date", ylabel=selected_column)
+plt.title("Forecast of " + selected_column + " using Prophet")
+st.pyplot()
 
 if selected_column == "Alcohol And Tobacco":
     description = "The price of alcohol and tobacco products in Mongolia over the next 36 months, will continue to increase due to inflation and overall increasing costs for materials and labor."
