@@ -44,7 +44,7 @@ model.fit(df)
 future = model.make_future_dataframe(periods=36, freq='M')
 forecast = model.predict(future)
 
-st.write("By looking at the data, we can see certain trends and different fluctuations in the price points for general products or services. As an economic standpoint it’s pretty adamant that, for consumer’s the price for goods and services will continue increasing, as well as overall living costs. ")
+st.write("By looking at the graph, It can be seen that there are certain trends and different fluctuations in the price points for general products or services. As an economic standpoint it’s pretty adamant that, for consumer’s the price for goods and services will continue increasing, as well as overall living costs. ")
 
 # Plot the predictions
 fig = px.line(forecast, x='ds', y='yhat', title="Forecast of " + selected_column + " using Prophet")
