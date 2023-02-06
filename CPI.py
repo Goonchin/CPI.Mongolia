@@ -70,7 +70,7 @@ elif selected_column == "Overall Index":
 elif selected_column == "Recreation and Culture":
     description = "The recorded data starts in 2006-2022. Similar to the other charts and sectors, showing increases in price over the years. The price for recreation and culture over the next 36 months will continue to increase due to levels of high tourism, inflation, and maintaining tradtions and culture."
 elif selected_column == "Transport":
-    description = "The recorded data starts in 2006-2022. Transportation costs over the years have rather explainable. The sudden pandemic recently limiting fuel imports and resources, but overall costs for transportation will always increase in any country that relies on petrol operated vehicals. The price for transport might decrease, due to the high influctution the past several months, but they also have a high chance of increasing due to other costs increasing."
+    description = "The recorded data starts in 2006-2022. Transportation costs over the years have been rather explainable. The sudden pandemic recently limiting fuel imports and resources, but overall costs for transportation will always increase in any country that relies on petrol operated vehicals. The price for transport might decrease, due to the high influctution the past several months, but they also have a high chance of increasing due to other costs increasing."
 # Add more elif blocks for other columns with their respective descriptions
 else:
     description = "The price of the selected product category in Mongolia over the next 36 months, will overall increase over the years."
