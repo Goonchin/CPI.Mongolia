@@ -12,36 +12,28 @@ selected_column = st.selectbox("Select a column", columns)
 
 @st.cache
 def load_data(column):
-    data_files = {
-        "Alcohol And Tobacco": "alcohol and tobacco.csv",
-        "Clothing,Footwear,and Cloth": "clothing, footwear, and cloth.csv",
-        "Communications": "communications.csv",
-        "Education Services": "education services.csv",
-        "Food And Non-Alcoholic Beverages": "food and non-alchoholic beverages.csv",
-        "Health": "health.csv",
-        "Housing,Water,Electricity,Fuels": "housing, water, electricity, fuels.csv",
-        "Recreation and Culture": "recreation and culture.csv",
-        "Transport": "transport.csv",
-        "Overall Index": "overall Index.csv",}
-    
-    if column == "All":
-        dfs = [pd.read_csv(f"Data/{file}", thousands=",") for file in data_files.values()]
-        df = pd.concat(dfs)
-        df["category"] = [
-            "Alcohol and Tobacco" if "alcohol" in file else
-            "Clothing,Footwear,and Cloth" if "clothing" in file else
-            "Communications" if "communications" in file else
-            "Education Services" if "education" in file else
-            "Food and Non-Alcoholic Beverages" if "food" in file else
-            "Health" if "health" in file else
-            "Housing,Water,Electricity,Fuels" if "housing" in file else
-            "Recreation and Culture" if "recreation" in file else
-            "Transport" if "transport" in file else
-            "Overall Index" for file in data_files.values()]
-        return df
-    else:
-        df = pd.read_csv(f"Data/{data_files[column]}", thousands=",")
-        return df
+    if column == "Alcohol And Tobacco":
+        df = pd.read_csv("Data/alcohol and tobacco.csv", thousands=",")
+    elif column == "Clothing,Footwear,and Cloth":
+        df = pd.read_csv("Data/clothing, footwear, and cloth.csv", thousands=",")
+    elif column == "Communications":
+        df = pd.read_csv("Data/communications.csv", thousands=",")
+    elif column == "Education Services":
+        df = pd.read_csv("Data/education services.csv", thousands=",")
+    elif column == "Food And Non-Alcoholic Beverages":
+        df = pd.read_csv("Data/food and non-alchoholic beverages.csv", thousands=",")    
+    elif column == "Health":
+        df = pd.read_csv("Data/health.csv", thousands=",")
+    elif column == "Housing,Water,Electricity,Fuels":
+        df = pd.read_csv("Data/housing, water, electricity, fuels.csv", thousands=",")
+    elif column == "Overall Index":
+        df = pd.read_csv("Data/overall Index.csv", thousands=",")
+    elif column == "Recreation and Culture":
+        df = pd.read_csv("Data/recreation and culture.csv", thousands=",") 
+    elif column == "Transport":
+        df = pd.read_csv("Data/transport.csv", thousands=",")    
+    # add more elif blocks for other columns
+    return df
 
 df = load_data(selected_column)
 
