@@ -7,7 +7,7 @@ st.title("How Does Inflation Affect The Mongolian Economy?")
 st.subheader("Take a look at the current records of prices of different products and services in Mongolia.")
 
 columns = ['Alcohol And Tobacco', 'Clothing,Footwear,and Cloth','Communications','Education Services','Food And Non-Alcoholic Beverages',
-           'Health','Housing,Water,Electricity,Fuels','Overall Index','Recreation and Culture','Transport','All'] # add other columns here
+           'Health','Housing,Water,Electricity,Fuels','Overall Index','Recreation and Culture','Transport'] # add other columns here
 selected_column = st.selectbox("Select a column", columns)
 
 @st.cache
