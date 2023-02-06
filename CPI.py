@@ -52,7 +52,7 @@ fig.update_layout(xaxis_title="Date", yaxis_title="Price")
 st.plotly_chart(fig)
 
 if selected_column == "Alcohol And Tobacco":
-    description = "The recorded data starts in 2006-2022. Using Prophet we can make a prediction for the next few years, which is shown in the above visual. The price of alcohol and tobacco products in Mongolia over the next 36 months, will continue to increase due to inflation and overall increasing costs for materials and labor."
+    description = "The recorded data starts in 2006-2022. There is a slight 'hump' between 2011-2013 which can assume that taxes for alcohol production increased, leading to a increase in prices. Using Prophet we can make a prediction for the next few years after our latest recorded prices, which is shown in the above interactive graph. The price of alcohol and tobacco products in Mongolia over the next 36 months, will continue to increase due to inflation and overall increasing costs for materials and labor."
 elif selected_column == "Clothing,Footwear,and Cloth":
     description = "The price of clothing, footwear, and cloth products in Mongolia over the next 36 months will continue to increase due to inflation and overall increasing costs for materials and labor."
 elif selected_column == "Communications":
