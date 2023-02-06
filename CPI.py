@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 from prophet import Prophet
+import plotly.express as px
 
 st.title("How Does Inflation Affect The Mongolian Economy?")
 st.subheader("Take a look at the current records of prices of different products and services in Mongolia.")
@@ -47,10 +48,8 @@ forecast = model.predict(future)
 st.write("Analysing the inflation over the years and how they relate to the average prices of goods and services in Mongolia, using Facebook Prophet. All the data was obtained from 1212.mn from the Consumer Price Index section.")
 
 # Plot the predictions
-plt.figure(figsize=(15,5))
-model.plot(forecast, xlabel="Date", ylabel=selected_column)
-plt.title("Forecast of " + selected_column + " using Prophet")
-st.pyplot()
+fig = px.line(forecast, x='ds', y='yhat', title="Forecast of " + selected_column + " using Prophet")
+st.plotly_chart(fig)
 
 if selected_column == "Alcohol And Tobacco":
     description = "The price of alcohol and tobacco products in Mongolia over the next 36 months, will continue to increase due to inflation and overall increasing costs for materials and labor."
