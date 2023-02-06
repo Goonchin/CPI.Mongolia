@@ -48,7 +48,7 @@ forecast = model.predict(future)
 st.write("Analysing the inflation over the years and how they relate to the average prices of goods and services in Mongolia, using Facebook Prophet. All the data was obtained from 1212.mn from the Consumer Price Index section.")
 
 # Plot the predictions
-fig = px.line(forecast, x='ds', y='yhat', title="Forecast of " + selected_column + " using Prophet")
+fig = px.line(forecast, x='Date', y='Price', title="Forecast of " + selected_column + " using Prophet")
 st.plotly_chart(fig)
 
 if selected_column == "Alcohol And Tobacco":
